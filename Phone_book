@@ -1,0 +1,63 @@
+import java.util.ArrayList;
+
+
+public class Phone_book {
+    private int test = 0, t2 = 0;
+    private ArrayList<String> s = new ArrayList<>();
+    private ArrayList<String> i = new ArrayList<>();
+
+    public void Add_num(String name, String n) {
+        for (int m = 0; m < i.size(); m++) {
+            int t = Integer.parseInt(n);
+            int t1 = Integer.parseInt(i.get(m));
+            if (t1 == t) {
+                test = 1;
+                //t2=m;
+            } else
+                test = 0;
+        }
+        if (test == 1) {
+            System.out.println(n + " is already in contacts at index"/*+(1+i.indexOf(t2))*/);
+        } else {
+            s.add(name);
+            i.add(n);
+        }
+
+    }
+
+    public void show() {
+        if (s.size() == 0) {
+            System.out.println("Empty list");
+        } else {
+            for (int k = 0; k < i.size(); k++) {
+                System.out.println((k + 1) + "." + s.get(k) + " -> " + (i.get(k)));
+            }
+        }
+    }
+
+    public void search(String name) {
+        int f3 = s.indexOf(name);
+        if (f3 < 0) {
+            System.out.println("No contact found of name " + name);
+        } else {
+            System.out.println(name + " found at index " + f3 + " number is " + s.get(f3));
+        }
+
+    }
+
+    public void remove(String name)
+    {
+        int f1=s.indexOf(name);
+        if(f1<0)
+        {
+            System.out.println("No contact found of name "+name);
+        }
+        else
+        {
+            s.clear(f1);
+            s.
+            i.clear(f1);
+            System.out.println(name+" Successfully removed");
+        }
+    }
+    }
